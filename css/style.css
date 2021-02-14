@@ -270,44 +270,8 @@ fieldset{
 
 
 
-/*  CSS for Admin Page  */
-.wrapper {
-  padding: 1%;
-  width: 80%;
-  margin: 0 auto;
-}
 
 
-/*  CSS for Menu Admin Page*/
-.border-bot {
-  border-bottom: 1px solid grey;
-}
-
-
-/*  CSS for Main-Content Admin Page*/
-.main-content {
-  background-color: #f1f2f6;
-  padding: 3% 0;
-}
-
-.col-4 {
-  width: 18%;
-  background-color: white;
-  margin: 1%;
-  padding: 2%;
-  float: left;
-}
-
-
-/*  CSS for Footer Admin Page*/
-.admin-footer {
-  background-color: #ff4757;
-  color: white;
-}
-
-.admin-footer a {
-  color: lightblue;
-}
 
 
 
