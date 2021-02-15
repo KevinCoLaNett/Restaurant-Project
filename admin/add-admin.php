@@ -5,17 +5,7 @@
   <div class="wrapper">
     <h1>Add Admin</h1>
 
-    <br><br>
-
-    <?php
-      //checking the session is set or not
-      if(isset($_SESSION['add'])){ 
-        echo $_SESSION['add']; //displaying session massage if set
-        unset($_SESSION['add']); //removing session message
-      }
-    ?>
-
-    <br><br><br>
+    <br>
 
     <form action="" method="POST">
       <table class="tbl-30">
@@ -35,7 +25,10 @@
         </tr>
 
         <tr>
-          <td colspan="2"><input type="submit" name="submit" value="Add Admin" class="btn-secondary"></td>
+          <td colspan="2">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <input type="submit" name="submit" value="Add Admin" class="btn-secondary">
+          </td>
         </tr>
       </table>
     </form>
@@ -72,13 +65,13 @@
       //check whether the (query is executed) data is inserted or not and display appropriate message
       if($res==TRUE) {
         //create session variable to display message
-        $_SESSION['add'] = "Admin Added Successfully";
+        $_SESSION['add'] = "<div class='success'>Admin Added Successfully. </div>";
         //redirect page to manage admin
         header("location:".SITEURL.'admin/manage-admin.php');
       }
       else {
         //create session variable to display message
-        $_SESSION['add'] = "Failed to Add Admin";
+        $_SESSION['add'] = "<div class='error'>Failed to Add Admin. </div>";
         //redirect page to add admin
         header("location:".SITEURL.'admin/add-admin.php');
       }
