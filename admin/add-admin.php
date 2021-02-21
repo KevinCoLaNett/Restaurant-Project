@@ -7,6 +7,17 @@
 
     <br>
 
+    <?php 
+      
+         if(isset($_SESSION['add'])){
+          echo $_SESSION['add']; //displaying session massage if set
+          unset($_SESSION['add']); //removing session message
+        }
+        
+      ?>
+
+    <br><br>
+
     <form action="" method="POST">
       <table class="tbl-30">
         <tr>

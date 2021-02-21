@@ -41,8 +41,7 @@
         }
       ?>
 
-      <br><br><br>
-
+      <br><br>
 
       <!--  Button to Add Admin  -->
       <a href="add-admin.php" class="btn-primary">Add Admin</a>
@@ -51,7 +50,7 @@
 
       <table class="tbl-full">
         <tr>
-          <th>S.N</th>
+          <th>S.N</th> <!-- Serial Number -->
           <th>Full Name</th>
           <th>Username</th>
           <th>Action</th>
@@ -66,12 +65,12 @@
           //check whether the query is executed or not
           if($res==TRUE) {
             //count rows to check whether we have data in database or not
-            $rows = mysqli_num_rows($res); // function to get all the rows in database
+            $counts = mysqli_num_rows($res); // function to get all the rows in database
 
             $sn=1; //create a variable and assign value
 
             //check the number of rows
-            if($rows>0){
+            if($counts>0){
               while($rows=mysqli_fetch_assoc($res)){
                 //using the while loop to get all the data from database
                 //and while loop will run as long as we have data in database
@@ -89,7 +88,7 @@
                   <td><?php echo $full_name?></td>
                   <td><?php echo $username?></td>
                   <td>
-                    <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Paswword</a>
+                    <a href="<?php echo SITEURL; ?>admin/update-password.php?id=<?php echo $id; ?>" class="btn-primary">Change Password</a>
                     <a href="<?php echo SITEURL; ?>admin/update-admin.php?id=<?php echo $id; ?>" class="btn-secondary">Update Admin</a>
                     <a href="<?php echo SITEURL; ?>admin/delete-admin.php?id=<?php echo $id; ?>" class="btn-danger">Delete Admin</a>
                   </td>
