@@ -52,7 +52,7 @@
         <table class="tbl-40">
           <tr>
             <td>Title: </td>
-            <td><input type="text" name="title" value="<?php echo $title?>" required></td>
+            <td><input type="text" name="title" value="<?php echo $title; ?>" required></td>
           </tr>
 
           <tr>

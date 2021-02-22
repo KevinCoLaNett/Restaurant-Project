@@ -19,6 +19,21 @@
         echo $_SESSION['upload']; //displaying session massage if set
         unset($_SESSION['upload']); //removing session message
       }
+
+      if(isset($_SESSION['remove'])){
+        echo $_SESSION['remove']; //displaying session massage if set
+        unset($_SESSION['remove']); //removing session message
+      }
+
+      if(isset($_SESSION['delete'])){
+        echo $_SESSION['delete']; //displaying session massage if set
+        unset($_SESSION['delete']); //removing session message
+      }
+
+      if(isset($_SESSION['update'])){
+        echo $_SESSION['update']; //displaying session massage if set
+        unset($_SESSION['update']); //removing session message
+      }
       
     ?>
 
