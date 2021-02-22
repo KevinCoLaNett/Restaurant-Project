@@ -13,7 +13,7 @@
     ?>
 
     <form action="" method="POST">
-      <table class="tbl-30">
+      <table class="tbl-40">
         <tr>
           <td>Current Password: </td>
           <td>

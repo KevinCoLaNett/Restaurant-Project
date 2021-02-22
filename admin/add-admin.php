@@ -19,7 +19,7 @@
     <br><br>
 
     <form action="" method="POST">
-      <table class="tbl-30">
+      <table class="tbl-40">
         <tr>
           <td>Full Name: </td>
           <td><input type="text" name="full_name" placeholder="Enter Your Name" required></td>

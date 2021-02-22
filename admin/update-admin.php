@@ -38,7 +38,7 @@
     ?>
 
     <form action="" method="POST">
-      <table class="tbl-30">
+      <table class="tbl-40">
         <tr>
           <td>Full Name: </td>
           <td><input type="text" name="full_name" value="<?php echo $full_name?>" required></td>
