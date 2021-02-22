@@ -98,8 +98,13 @@
               }
             }
             else{
-              // we do not have data in database
-              echo "No Data in Database";
+              ?>
+              
+                <td>
+                  <tr colspan="6"><br><div class="error">No Category Added</div><br></tr>
+                </td>
+
+              <?php
             }
           }
         ?>

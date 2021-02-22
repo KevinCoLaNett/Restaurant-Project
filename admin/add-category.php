@@ -32,7 +32,7 @@
 
           <tr>
             <td>Select Image: </td>
-            <td><input type="file" name="image" required></td>
+            <td><input type="file" name="image"></td>
           </tr>
 
           <tr>
@@ -63,29 +63,36 @@
 
       <?php
 
-        if(isset($_POST['submit'])) {
+        if(isset($_POST['submit'])) 
+        {
           $title = $_POST['title'];
           $featured = $_POST['featured'];
           $active = $_POST['active'];
           $image_name = $_FILES['image']['name'];
-          //auto rename image
-          //get extension of image
-          $ext = end(explode('.', $image_name));
-          //rename image
-          $image_name = "Food_Category_".rand(000,999).'.'.$ext;
 
-          $source_path = $_FILES['image']['tmp_name'];
-          $destination_path = "../img/category/".$image_name;
+          //upload image only if image is selected
+          if($image_name!="")
+          {
+            //auto rename image
+            //get extension of image
+            $ext = end(explode('.', $image_name));
+            //rename image
+            $image_name = "Food_Category_".rand(000,999).'.'.$ext;
 
-          $upload = move_uploaded_file($source_path, $destination_path);
+            $source_path = $_FILES['image']['tmp_name'];
+            $destination_path = "../img/category/".$image_name;
 
-          //check whether the image is uploaded or not
-          if($upload==FALSE){
-            $_SESSION['upload'] = "<div class='error'>Failed to Upload Image. </div>";
-            header('location:'.SITEURL.'/admin/add-category.php');
-            die();
+            $upload = move_uploaded_file($source_path, $destination_path);
+
+            //check whether the image is uploaded or not
+            if($upload==FALSE)
+            {
+              $_SESSION['upload'] = "<div class='error'>Failed to Upload Image. </div>";
+              header('location:'.SITEURL.'/admin/add-category.php');
+              die();
+            }
+            
           }
-
 
           $sql = "INSERT INTO tbl_category SET
               title = '$title',

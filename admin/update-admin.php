@@ -7,21 +7,34 @@
     <br>
 
     <?php 
-      $id = $_GET['id'];
+      if(isset($_GET['id'])){
 
-      $sql = "SELECT * FROM tbl_admin WHERE id=$id";
-      $res = mysqli_query($conn,$sql);
-      if($res==TRUE){
-        $count = mysqli_num_rows($res);
-        if($count==1){
-          $row = mysqli_fetch_assoc($res);
-          $full_name = $row['full_name'];
-          $username = $row['username'];
+        $id = $_GET['id'];
+
+        $sql = "SELECT * FROM tbl_admin WHERE id=$id";
+        $res = mysqli_query($conn,$sql);
+
+        if($res==TRUE){
+          $count = mysqli_num_rows($res);
+          if($count==1){
+            $row = mysqli_fetch_assoc($res);
+            $full_name = $row['full_name'];
+            $username = $row['username'];
+          }
+          else {
+            $_SESSION['update'] = "<div class='error'>Admin not Found.</div>";
+            header('location:' . SITEURL.'admin/manage-admin.php');
+            die();
+          }
         }
-        else {
-          header('location:' . SITEURL.'admin/manage-admin.php');
-        }
+
       }
+      else{
+        $_SESSION['update'] = "<div class='error'>Unauthorized Access!</div>";
+        header("location:".SITEURL.'admin/manage-admin.php');
+        die();
+      }
+      
     ?>
 
     <form action="" method="POST">
@@ -66,8 +79,9 @@
       header('location:' . SITEURL.'admin/manage-admin.php');
     }
     else{
-      $_SESSION['update'] = "<div class='error'> Failed to Update Aamin</div>";
+      $_SESSION['update'] = "<div class='error'> Failed to Update Admin</div>";
       header('location:' . SITEURL.'admin/manage-admin.php');
+      die();
     }
   }
 

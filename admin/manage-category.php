@@ -14,6 +14,26 @@
         echo $_SESSION['add']; //displaying session massage if set
         unset($_SESSION['add']); //removing session message
       }
+
+      if(isset($_SESSION['remove'])){
+        echo $_SESSION['remove']; //displaying session massage if set
+        unset($_SESSION['remove']); //removing session message
+      }
+
+      if(isset($_SESSION['delete'])){
+        echo $_SESSION['delete']; //displaying session massage if set
+        unset($_SESSION['delete']); //removing session message
+      }
+
+      if(isset($_SESSION['update'])){
+        echo $_SESSION['update']; //displaying session massage if set
+        unset($_SESSION['update']); //removing session message
+      }
+
+      if(isset($_SESSION['upload'])){
+        echo $_SESSION['upload']; //displaying session massage if set
+        unset($_SESSION['upload']); //removing session message
+      }
       
     ?>
 
@@ -84,7 +104,7 @@
                   <td><?php echo $active?></td>
                   <td>
                     <a href="<?php echo SITEURL; ?>admin/update-category.php?id=<?php echo $id; ?>" class="btn-secondary">Update Category</a>
-                    <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>" class="btn-danger">Delete Category</a>
+                    <a href="<?php echo SITEURL; ?>admin/delete-category.php?id=<?php echo $id; ?>&image_name=<?php echo $image_name; ?>" class="btn-danger">Delete Category</a>
                   </td>
                 </tr>
 
@@ -96,7 +116,7 @@
               ?>
               
                 <td>
-                  <tr colspan="6"><div class="error">No Category Added</div></tr>
+                  <tr colspan="6"><br><div class="error">No Category Added</div><br></tr>
                 </td>
 
               <?php
