@@ -16,9 +16,10 @@
       }
 
     ?>
-      
-      
-      <br>
+      <br><br>
+      <!--  Button to Add Food  -->
+      <a href="<?php echo SITEURL;?>foods.php" class="btn-primary">Add Order</a>
+      <br><br>
 
       <table class="tbl-full">
         <tr>
@@ -102,7 +103,7 @@
               <td><?php echo $customer_email?></td>
               <td><?php echo $customer_address?></td>
               <td>
-                  <a href="<?php echo SITEURL?>admin/update-order.php?id=<?php echo $id?>" class="btn-secondary">Update Order</a>
+                  <a href="<?php echo SITEURL?>admin/update-order.php?id=<?php echo $id?>" class="btn-secondary">Update</a>
               </td>
             </tr>
         <?php
