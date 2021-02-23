@@ -99,6 +99,10 @@ fieldset{
   color: #ff4757; 
 }
 
+.success {
+  color: #2ed573;
+}
+
 
 /* CSS for Navbar section*/
 .logo {
