@@ -51,7 +51,7 @@
           <!-- <th>Description</th> -->
           <th>Price</th>
           <th>Image Name</th>
-          <!-- <th>Category</th> -->
+          <th>Category</th>
           <th>Featured</th>
           <th>Active</th>
           <th>Action</th>
@@ -119,21 +119,21 @@
                     ?>
                   </td>
 
-                  <!-- <td>
+                  <td>
                     <?php
-                    //  if($category_id!="")
-                    //  {
-                    //     $sql2 = "SELECT * FROM tbl_category WHERE id=$category_id";
-                    //     $res2 = mysqli_query($conn,$sql2);
-                    //     $row=mysqli_fetch_assoc($res2);
-                    //     echo $row['title'];
-                    //  }
-                    //  else
-                    //  {
-                    //    echo "<div class='error'>No Category</div>";
-                    //  } 
+                      if($category_id!="")
+                      {
+                         $sql2 = "SELECT * FROM tbl_category WHERE id=$category_id";
+                         $res2 = mysqli_query($conn,$sql2);
+                         $row=mysqli_fetch_assoc($res2);
+                         echo $row['title'];
+                      }
+                      else
+                      {
+                        echo "<div class='error'>No Category</div>";
+                      } 
                     ?>
-                  </td> -->
+                  </td> 
                   <td><?php echo $featured;?></td>
                   <td><?php echo $active;?></td>
                   <td>

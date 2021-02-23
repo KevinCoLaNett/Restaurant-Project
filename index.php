@@ -13,7 +13,7 @@
     </section>
     <!-- fOOD sEARCH Section Ends Here -->
 
-    <!-- CAtegories Section Starts Here -->
+    <!-- Categories Section Starts Here -->
     <section class="categories">
         <div class="container">
             <h2 class="text-center">Explore Foods</h2>
@@ -29,8 +29,9 @@
                         $id = $row['id'];
                         $title = $row['title'];
                         $image_name = $row['image_name'];
-                        ?>
-                        <a href="<?php echo SITEURL; ?>category-foods.php">
+            ?>
+                        <a href="<?php echo SITEURL; ?>category-foods.php?category_id=<?php echo $id?>">
+
                             <div class="box-3 float-container">
                                 <?php 
                                     if($image_name=="")
@@ -81,21 +82,21 @@
                         $price = $row2['price'];
                         $image_name = $row2['image_name'];
                         $description = $row2['description'];
-                        ?>
+            ?>
                         <div class="food-menu-box">
                             <div class="food-menu-img">
-                            <?php
-                                if($image_name=="")
-                                {
-                                    echo "<div class='error'>Image Not Available</div>";
-                                }
-                                else
-                                {
-                                    ?>
-                                    <img src="<?php echo SITEURL; ?>img/food/<?php echo $image_name;?>" alt="<?php echo $title ?>" class="img-responsive img-curve">
-                                    <?php
-                                }
-                            ?>
+                                <?php
+                                    if($image_name=="")
+                                    {
+                                        echo "<div class='error'>Image Not Available</div>";
+                                    }
+                                    else
+                                    {
+                                ?>
+                                        <img src="<?php echo SITEURL; ?>img/food/<?php echo $image_name;?>" alt="<?php echo $title ?>" class="img-responsive img-curve">
+                                <?php
+                                    }
+                                ?>
 
                             </div>
 
@@ -108,7 +109,7 @@
                                 <a href="<?php echo SITEURL; ?>order.php" class="btn btn-primary">Order Now</a>
                             </div>
                         </div>
-                        <?php
+            <?php
                     }
                 }
                 else
@@ -123,7 +124,7 @@
         </div>
 
         <p class="text-center">
-            <a href="#">See All Foods</a>
+            <a href="<?php echo SITEURL; ?>foods.php">See All Foods</a>
         </p>
     </section>
     <!-- fOOD Menu Section Ends Here -->

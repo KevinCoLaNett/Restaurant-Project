@@ -34,7 +34,7 @@
                         $price = $row['price'];
                         $image_name = $row['image_name'];
                         $description = $row['description'];
-                        ?>
+            ?>
                         <div class="food-menu-box">
                             <div class="food-menu-img">
                                 <?php
@@ -61,7 +61,7 @@
                                 <a href="<?php echo SITEURL; ?>order.php" class="btn btn-primary">Order Now</a>
                             </div>
                         </div>
-                        <?php
+            <?php
                     }
                 }
                 else 
