@@ -28,7 +28,7 @@
               $description = $row['description'];
               $price = $row['price'];
               $current_image = $row['image_name'];
-              $category_id = $row['category_id'];
+              $current_category = $row['category_id'];
               $featured = $row['featured'];
               $active = $row['active'];
 
@@ -95,24 +95,24 @@
             <td>
               <select name="category" >
                 <?php
-                  $sql = "SELECT * FROM tbl_category WHERE active='Yes'";
-                  $res = mysqli_query($conn,$sql);
-                  $count = mysqli_num_rows($res);
+                  $sql2 = "SELECT * FROM tbl_category WHERE active='Yes'";
+                  $res2 = mysqli_query($conn,$sql2);
+                  $count = mysqli_num_rows($res2);
                   if($count>0)
                   {
-                    while($row=mysqli_fetch_assoc($res))
+                    while($row=mysqli_fetch_assoc($res2))
                     {
-                      $category = $row['id'];
+                      $category_id = $row['id'];
                       $category_title = $row['title'];
 
                       ?>
-                      <option value="<?php echo $category ?>"><?php echo $category_title ?></option> 
+                      <option <?php if($current_category==$category_id){echo "Selected"; } ?> value="<?php echo $category_id ?>"><?php echo $category_title ?></option> 
                       <?php
                     }
                   }
                   else{
                     ?>
-                      <option value="0">No Category Found</option>
+                      <option value="0">Category Not Available</option>
                     <?php
                   }
                 ?>
@@ -140,7 +140,7 @@
             <td colspan="2">
               <input type="hidden" name="current_image" value="<?php echo $current_image; ?>">
               <input type="hidden" name="id" value="<?php echo $id; ?>">
-              <input type="submit" name="submit" value="Add Food" class="btn-secondary">
+              <input type="submit" name="submit" value="Update Food" class="btn-secondary">
             </td>
           </tr>
 
@@ -159,7 +159,7 @@
       $title = $_POST['title'];
       $description = $_POST['description'];
       $price = $_POST['price'];
-      $category_id = $_POST['category'];
+      $category = $_POST['category'];
       $featured = $_POST['featured'];
       $active = $_POST['active'];
       $current_image = $_POST['current_image'];
@@ -215,20 +215,20 @@
         $image_name = $current_image;
       }
 
-      $sql2 = "UPDATE tbl_food SET 
+      $sql3 = "UPDATE tbl_food SET 
         title = '$title',
         description = '$description',
         image_name = '$image_name',
         price = $price,
-        category_id = $category_id,
+        category_id = $category,
         featured = '$featured',
         active = '$active'
         WHERE id=$id
       ";
 
-      $res2 = mysqli_query($conn, $sql2);
+      $res3 = mysqli_query($conn, $sql3);
 
-      if($res2==TRUE)
+      if($res3==TRUE)
       {
         $_SESSION['update'] = "<div class='success'>Food Updated Successfully</div>";
         header('location:' . SITEURL.'admin/manage-food.php');

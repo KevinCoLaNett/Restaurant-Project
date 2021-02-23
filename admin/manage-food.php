@@ -48,10 +48,10 @@
         <tr>
           <th>S.N</th> <!-- Serial Number -->
           <th>Title</th>
-          <th>Description</th>
+          <!-- <th>Description</th> -->
           <th>Price</th>
           <th>Image Name</th>
-          <th>Category</th>
+          <!-- <th>Category</th> -->
           <th>Featured</th>
           <th>Active</th>
           <th>Action</th>
@@ -92,18 +92,18 @@
                 <tr>
                   <td><?php echo $sn++;?></td>
                   <td><?php echo $title;?></td>
-                  <td>
+                  <!-- <td>
                     <?php
-                      if($description!="")
-                      {
-                        echo $description;
-                      }
-                      else
-                      {
-                        echo "<div class='error'>No Description Added</div>";
-                      } 
-                    ?>
-                  </td>
+                      // if($description!="")
+                      // {
+                      //   echo $description;
+                      // }
+                      // else
+                      // {
+                      //   echo "<div class='error'>No Description Added</div>";
+                      // } 
+                    ?> 
+                  </td> -->
                   <td><?php echo $price;?></td>
 
                   <td>
@@ -119,21 +119,21 @@
                     ?>
                   </td>
 
-                  <td>
+                  <!-- <td>
                     <?php
-                     if($category_id!="")
-                     {
-                        $sql2 = "SELECT * FROM tbl_category WHERE id=$category_id";
-                        $res2 = mysqli_query($conn,$sql2);
-                        $row=mysqli_fetch_assoc($res2);
-                        echo $row['title'];
-                     }
-                     else
-                     {
-                       echo "<div class='error'>No Category</div>";
-                     } 
+                    //  if($category_id!="")
+                    //  {
+                    //     $sql2 = "SELECT * FROM tbl_category WHERE id=$category_id";
+                    //     $res2 = mysqli_query($conn,$sql2);
+                    //     $row=mysqli_fetch_assoc($res2);
+                    //     echo $row['title'];
+                    //  }
+                    //  else
+                    //  {
+                    //    echo "<div class='error'>No Category</div>";
+                    //  } 
                     ?>
-                  </td>
+                  </td> -->
                   <td><?php echo $featured;?></td>
                   <td><?php echo $active;?></td>
                   <td>

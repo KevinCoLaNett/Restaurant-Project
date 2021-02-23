@@ -95,6 +95,10 @@ fieldset{
   border-radius: 5px;
 }
 
+.error {
+  color: #ff4757; 
+}
+
 
 /* CSS for Navbar section*/
 .logo {
