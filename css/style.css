@@ -94,6 +94,9 @@ fieldset{
   padding: 3%;
   border-radius: 5px;
 }
+textarea{
+  resize: none;
+}
 
 .error {
   color: #ff4757; 

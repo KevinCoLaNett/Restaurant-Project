@@ -89,6 +89,9 @@ table tr td {
   color: #ff4757; 
 }
 
+textarea{
+  resize: none;
+}
 
 /*  CSS for Menu  */
 .menu {
